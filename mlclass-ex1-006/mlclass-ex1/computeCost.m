@@ -22,7 +22,7 @@ end;
 
 J = J/(2*m);
 
-fprintf('The cost of J is %f  \n', J);
+%fprintf('The cost of J is %f  \n', J);
 % =========================================================================
 
 end
