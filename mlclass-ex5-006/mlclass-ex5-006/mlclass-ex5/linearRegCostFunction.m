@@ -22,8 +22,11 @@ grad = zeros(size(theta));
 
 J = 1/(2*m)*sum((X*theta - y).^2) + lambda/(2*m)*sum(theta(2:end).^2);
 
-grad(1) = 1/m*sum((X*theta - y)'*X(1));
-grad(2:end) = 1/m*sum((X*theta - y)'*X(2:end,)) + lambda*theta(2:end);
+grad(1) = mean((X*theta - y).*X(:,1));
+[p q] = size(X);
+for j = 2:q,
+	grad(j) = mean((X*theta - y).*X(:,j)) + lambda*theta(j)/m;
+end;
 
 
 
