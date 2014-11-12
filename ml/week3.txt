@@ -1,0 +1,10 @@
+假设函数就是预测y=1时的概率，假如使用logsitic函数，那么就能够得到假设函数的取值大于0.5时y=1，那么在这个函数中当theta的转置乘以x就应该大于等于0
+因为整个g（theta’*x） = p（y=1|x，theta）=假设函数，当theta’*x大于0，而theta的值确定时，会得到一个关于x的不等式，这个不等式表达的就是decision boundary决策边界，将平面分成了两个区域，一边假设预测y=1，它是假设函数的一个属性，取决于theta的取值
+我目前遇到的只是特征的一维组合，而不是二次方组合，但是假设函数能够使用二次方组合
+cost function来选择参数theta，假如logistic也使用平方差，那么它构成的cost就不是凹函数，而是有很多起伏，因此选择新的cost function，也就是取对数，-log，此时假如y=1，假设函数也为1，cost=0，根据y的不同取值来定义cost function的表达式，y和h同时决定了整个cost，当y=1，而h趋近于0的时候cost就非常大，就是实际与预测不相符的时候
+【梯度下降得到参数】公式
+优化算法：最小化cost function（最接近真实数据），随机优化算法（conjugate gradient，BFGS，L-BFGS）不需要选择learning rate，比梯度下降要快。
+将多分类问题分割成很多二分类问题，有多个假设函数，对应了多个y=1，然后转变为y=i
+【overfitting】unfitting没有拟合，有很大的bias，overfitting有很大的方差，很难对新的example产生predict，它对训练集的拟合过于详细，并不能正确的反映新的元素应该放在哪里，假如训练集太少，feature太多就会出现overfitting，因此第一就是减少feature（x，x的平方都是feature），第二就是regularization，保持所有的feature，但是减少参数的magnitude/values
+当参数使用较小的值那么假设函数会更加的简单，又由于在针对cost function进行操作时不知该对哪个收缩，那么就对所有的参数进行shrink，除掉theta0，正则项就是将所有的参数平方加起来，系数lambda为了权衡保持参数能够拟合以及参数很小，因此在求梯度下降改变参数时，多了一项改变参数，这一项使得每一次的thetaj都小于之前的theta，因此一点一点的在缩小参数。
+当m<n,x转置乘以x没有逆，那么就用pinv，平时用inv

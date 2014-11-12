@@ -1,0 +1,14 @@
+1.dl背景
+2.应用
+3.案例
+4.原理
+5.基本思想
+6.未来方向
+
+一个方向，dl是机器学习的一个新的分支，为了模仿人的神经元产生信号的方法来构成深度学习。
+两个特点，深层结构与无监督，深层结构是指相对于以往输入通过一个函数得到输出的结构不同，输入可以通过中间的隐藏层得到一组输出，再由这组输出通过另一个函数得到最终的输出。
+三种学习模型，RBM，Auto-encoder，Convolutional Neural Networks，
+四个大牛，Yoshua Bengio，Yann LeCun，Geoffrey E. Hinton，Andrew Ng
+五个应用，图像识别方面Google+ photo search和百度识图，
+六个方向，智能家用机器人，
+

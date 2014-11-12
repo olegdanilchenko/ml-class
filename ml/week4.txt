@@ -1,0 +1,8 @@
+m个training example，L是网络层数，sl是某一层的节点个数
+正则项没有加入theta0，J是cost function，神经网络则对每一个输出节点合成了J
+bp算法，求J对theta的偏导，前面的都是g(),最后一层是h(),delta表达的是每一层的error，（a-y），其中a就是h()，没有detla1
+将差错传递回来，
+theta的上标代表第几层，脚标代表是第几个神经元（j）到下一层的哪个神经元（i），表达式为ij，下一层在前，上一层在后
+与前向传播的表达式很像
+可以将logsitic造成的cost function类比于平方差
+delta是cost关于z的偏导项
